@@ -1,0 +1,45 @@
+{
+  "name": "react-native-sample-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React Native sample app",
+  "scripts": {
+    "postinstall": "rnpm link",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "babel-node test/index.js | faucet",
+    "test-debug": "babel-node test/index.js",
+    "generate": "gulp generate",
+    "clear-cache": "rm -rf $TMPDIR/react-packager-* && rm -fr $TMPDIR/react-* && watchman watch-del-all",
+    "watchman-restart": "watchman shutdown-server",
+    "ios": "open ios/LinklatersAppFrontend.xcodeproj",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "android-emu": "emulator -avd reactnative",
+    "android-logs": "adb logcat *:S ReactNative:V ReactNativeJS:V"
+  },
+  "author": "Luke Hedger <luke.hedger@mcsaatchi.com>",
+  "engines": {
+    "node": "^5.5.0",
+    "npm": "^3.0.0"
+  },
+  "dependencies": {
+    "moment": "^2.11.2",
+    "react": "^0.14.7",
+    "react-native": "^0.19.0",
+    "react-native-contacts": "^0.2.1",
+    "react-native-router-redux": "^0.2.2",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1",
+    "redux-logger": "^2.5.0",
+    "redux-saga": "^0.9.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-stage-2": "^6.5.0",
+    "faucet": "0.0.1",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-template": "^3.1.0",
+    "inquirer": "^0.12.0",
+    "tape": "^4.4.0"
+  }
+}
